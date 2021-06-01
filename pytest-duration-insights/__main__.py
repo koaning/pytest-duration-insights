@@ -16,11 +16,12 @@ def parse_test_info(clump):
             .keep(lambda d: "duration" in d.keys())
             .group_by("nodeid")
             .agg(duration=("duration", "sum"))
-            .mutate(parsed=lambda d:  parse("{path}/{file}.py::{test}", d['nodeid']).named,
+            .mutate(duration=lambda d: round(d['duration'] * 1000),
+                    parsed=lambda d: parse("{path}/{file}.py::{test}", d['nodeid']).named,
                     parsed_path=lambda d: f"{d['parsed']['path']}/{d['parsed']['file']}.py",
                     parsed_test=lambda d: d['parsed']['test'],
                     path=lambda d: d['parsed']['path'],
-                    hierarchy = lambda d: tuple(list(Path(d['parsed_path']).parts) + [d['parsed_test']]))
+                    hierarchy=lambda d: tuple(list(Path(d['parsed_path']).parts) + [d['parsed_test']]))
             .drop("parsed"))
 
 
@@ -49,6 +50,8 @@ if __name__ == "__main__":
     res = (Clumper.read_jsonl(report_path)
            .pipe(parse_test_info)
            .pipe(to_hierarchy_dict, hierarchy_col="hierarchy", value_col="duration"))
+    from rich import print
+    print(res)
     
     tmpdir = tempfile.mkdtemp()
     shutil.copytree(src=Path(__file__).parent / "web", 
