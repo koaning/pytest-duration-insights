@@ -16,10 +16,10 @@ if __name__ == "__main__":
            .pipe(to_hierarchy_dict, hierarchy_col="hierarchy", value_col="duration"))
     
     tmpdir = tempfile.mkdtemp()
-    shutil.copytree(src=Path(__file__).parent / "web", 
-                    dst=Path(tmpdir) / "web")
-    Clumper(res, listify=False).write_json(Path(tmpdir) / "web" / "flare.json")
+    shutil.copytree(src=Path(__file__).parent / "static", 
+                    dst=Path(tmpdir) / "static")
+    Clumper(res, listify=False).write_json(Path(tmpdir) / "static" / "data.json")
 
     import subprocess
     
-    subprocess.run(["python", "-m", "http.server", "8002", "--directory", str(Path(tmpdir) / "web")])
+    subprocess.run(["python", "-m", "http.server", "8002", "--directory", str(Path(tmpdir) / "static")])
