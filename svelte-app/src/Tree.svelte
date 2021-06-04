@@ -6,6 +6,7 @@
         expanded = !expanded;
         color = "lightgray" ? expanded : "black"
     }
+    console.log(data);
 </script>
 
 <style>
@@ -17,18 +18,17 @@
 }
 </style>
 
-<p class="{color}" on:click={toggle}>{data['name']}</p>
+<p class="{color}" on:click={toggle}>{data['name']} - {data['value']}</p>
 <p style="padding-left: 30px">
     {#each data['children'] as child}
         {#if 'children' in child}
             {#if expanded}
-                <svelte:self data={child}/>
+                <span><svelte:self data={child}/></span>
             {/if}    
         {:else}
             {#if expanded}
-                <p>{child['name']}</p>
+                <p>{child['name']} - {child['value']}</p>
             {/if}
         {/if}
-        
     {/each}
 </p>
