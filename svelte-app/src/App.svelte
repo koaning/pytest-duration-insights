@@ -15,6 +15,9 @@
 	<html lang="en" />
 </svelte:head>
 
+<h1>Pytest Duration Insights</h1>
+<p>You can click in the treemap below to explore where most time is spent.</p>
+
 {#await promise}
 	<p>...waiting</p>
 {:then data}
@@ -23,3 +26,4 @@
 	<p style="color: red">{error.message}</p>
 {/await}
 
+<p>You can also explore the nested table below for more details.</p>

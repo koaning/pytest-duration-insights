@@ -10,6 +10,9 @@ from ._parsing import to_hierarchy_dict, parse_test_info
 
 
 if __name__ == "__main__":
+    """
+    pytest-duration-insights --report-file --open-browser --reduce
+    """
     report_path = sys.argv[1]
     res = (Clumper.read_jsonl(report_path)
            .pipe(parse_test_info)

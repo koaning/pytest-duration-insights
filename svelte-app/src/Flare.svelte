@@ -83,8 +83,6 @@
 	</Pancake.Chart>
 </div>
 
-<p>You can click in the treemap to explore where most of the time is spent.</p>
-
 <style>
 	.breadcrumbs {
 		width: 100%;
