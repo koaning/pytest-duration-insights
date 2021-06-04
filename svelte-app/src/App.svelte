@@ -10,6 +10,11 @@
 	let promise = getData();
 </script>
 
+<svelte:head>
+	<title>Duration Insights</title>
+	<html lang="en" />
+</svelte:head>
+
 {#await promise}
 	<p>...waiting</p>
 {:then data}
