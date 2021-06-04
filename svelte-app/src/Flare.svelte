@@ -8,7 +8,6 @@
 	import Treemap from './Treemap.svelte';
 	
     export let data; 
-    console.log(data);
 
 	const treemap = d3.treemap();
 
