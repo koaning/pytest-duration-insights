@@ -19,6 +19,7 @@ def trim_nodeid(nodeid):
         return nodeid
     return nodeid[:nodeid.find("[")] + "[*]"
 
+
 def parse_test_info(clump, trim=True):
     """
     Parses the test info for useful information.
@@ -56,3 +57,28 @@ def to_hierarchy_dict(clump, hierarchy_col=None, value_col=None, value_name="val
                 res = [c for c in cursor["children"] if c['name'] == item]
             cursor = res[0]
     return data
+
+
+class Node:
+    def __init__(self, name, children=None, val=None):
+        self.name = name
+        self.children = children
+        self.val = val
+    
+    @property
+    def value(self):
+        if self.val:
+            return self.val
+        return sum([c.value for c in self.children])
+    
+    @classmethod
+    def from_dict(cls, d):
+        if 'children' in d:
+            return Node(name=d['name'], 
+                        children=[cls.from_dict(c) for c in d['children']])
+        return Node(name=d['name'], val=d['value'])
+    
+    def to_value_dict(self):
+        if self.children:
+            return {"name":self.name, "value": self.value, "children": [c.to_value_dict() for c in self.children]}
+        return {"name":self.name, "value": self.value}
