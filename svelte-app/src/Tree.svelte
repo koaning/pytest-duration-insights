@@ -21,8 +21,11 @@
     font-family: 'Courier New', monospace;
     font-weight: 600;
 }
-</style>
 
+.pointer{
+    cursor: pointer;
+}
+</style>
 
 <p class="{color}" on:click={toggle}>
     {#if expanded}
@@ -34,16 +37,15 @@
             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
         </svg>
     {/if}
-    <span class="mono">{data['name']} - {data['value']} - {Math.round(data['value']/maxtime*10000)/100}% </span>
+    <span class="mono pointer">{data['name']} - {data['value']} - {Math.round(data['value']/maxtime*10000)/100}% </span>
 </p>
+
 <p style="padding-left: 30px">
     {#each data['children'] as child}
-        {#if 'children' in child}
-            {#if expanded}
+        {#if expanded}
+            {#if 'children' in child}
                 <span><svelte:self data={child} maxtime={maxtime}/></span>
-            {/if}    
-        {:else}
-            {#if expanded}
+            {:else}
                 <p class="mono">{child['name']} - {child['value']} - {Math.round(data['value']/maxtime*10000)/100}%</p>
             {/if}
         {/if}

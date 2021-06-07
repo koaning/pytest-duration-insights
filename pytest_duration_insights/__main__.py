@@ -7,7 +7,7 @@ from pathlib import Path
 
 from clumper import Clumper 
 
-from ._parsing import to_hierarchy_dict, parse_test_info
+from ._parsing import to_hierarchy_dict, parse_test_info, Node
 from pytest_duration_insights import VERSION
 
 
@@ -41,6 +41,8 @@ def explore(report_path: str = typer.Argument(..., help="Report log to visualise
     shutil.copytree(src=Path(__file__).parent / "static", 
                     dst=Path(tmpdir) / "static")
     Clumper(res, listify=False).write_json(Path(tmpdir) / "static" / "data.json")
+    tree_res = Node.from_dict(res).to_value_dict()
+    Clumper(tree_res, listify=False).write_json(Path(tmpdir) / "static" / "treedata.json")
     
     # This a bit hacky but does the job
     subprocess.run(["python", "-m", "http.server", str(port), "--directory", str(Path(tmpdir) / "static")])

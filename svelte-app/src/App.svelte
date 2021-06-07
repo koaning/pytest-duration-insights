@@ -34,7 +34,7 @@
 {#await treePromise}
 	<p>...waiting</p>
 {:then treedata}
-	<Tree data={treedata}></Tree>
+	<Tree data={treedata} parent={true}></Tree>
 	<p>You can also explore the nested table below for more details.</p>
 {:catch error}
 	<p style="color: red">{error.message}</p>
