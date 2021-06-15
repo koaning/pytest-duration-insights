@@ -37,16 +37,16 @@
             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
         </svg>
     {/if}
-    <span class="mono pointer">{data['name']} - {data['value']} - {Math.round(data['value']/maxtime*10000)/100}% </span>
+    <span class="mono pointer">{data['name']} - {data['value']}ms - {Math.round(data['value']/maxtime*10000)/100}% </span>
 </p>
 
 <p style="padding-left: 30px">
     {#each data['children'] as child}
         {#if expanded}
             {#if 'children' in child}
-                <span><svelte:self data={child} maxtime={maxtime}/></span>
+                <svelte:self data={child} maxtime={maxtime}/>
             {:else}
-                <p class="mono">{child['name']} - {child['value']} - {Math.round(data['value']/maxtime*10000)/100}%</p>
+                <p class="mono">{child['name']} - {child['value']}ms - {Math.round(child['value']/maxtime*10000)/100}%</p>
             {/if}
         {/if}
     {/each}

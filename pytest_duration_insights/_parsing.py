@@ -80,5 +80,7 @@ class Node:
     
     def to_value_dict(self):
         if self.children:
-            return {"name":self.name, "value": self.value, "children": [c.to_value_dict() for c in self.children]}
+            return {"name":self.name, 
+                    "value": self.value, 
+                    "children": sorted([c.to_value_dict() for c in self.children], key=lambda d: -d['value'])}
         return {"name":self.name, "value": self.value}

@@ -25,17 +25,16 @@
 	<p>...waiting</p>
 {:then data}
 	<Flare data={data}></Flare>
-	<p>You can also explore the nested table below for more details.</p>
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}
 
+<p>You can also explore the nested tree below for more details.</p>
 
 {#await treePromise}
 	<p>...waiting</p>
 {:then treedata}
 	<Tree data={treedata} parent={true}></Tree>
-	<p>You can also explore the nested table below for more details.</p>
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}
