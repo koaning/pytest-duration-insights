@@ -1,6 +1,7 @@
 <script>
 	import Flare from './Flare.svelte';
 	import Tree from './Tree.svelte';
+	import TableRow from './TableRow.svelte'
 
 	async function getData(url){
 		const res = await fetch(url);
@@ -34,7 +35,9 @@
 {#await treePromise}
 	<p>...waiting</p>
 {:then treedata}
-	<Tree data={treedata} parent={true}></Tree>
+	<table style="width: 100%; max-width: 100%; margin-bottom: 1rem; background-color: transparent;">
+		<TableRow data={treedata} maxtime={treedata['value']}></TableRow>
+	</table>
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}
