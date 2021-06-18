@@ -1,6 +1,5 @@
 <script>
 	import Flare from './Flare.svelte';
-	import Tree from './Tree.svelte';
 	import TableRow from './TableRow.svelte'
 
 	async function getData(url){
@@ -9,8 +8,8 @@
 		return blob
 	}
 
-	let mapPromise = getData("/pytest-duration-insights/data.json");
-	let treePromise = getData("/pytest-duration-insights/treedata.json");
+	let mapPromise = getData("data.json");
+	let treePromise = getData("treedata.json");
 	
 </script>
 
