@@ -24,7 +24,7 @@ function toggle(){
         </span>
     </td>
     <td style="text-align: right;">{data['value']}ms</td>
-    <td>{Math.round(data['value']/maxtime*10000)/100}%</td>
+    <td style="text-align: right;">{Math.round(data['value']/maxtime*10000)/100}%</td>
 </tr>
 
 {#if expanded}
@@ -37,7 +37,7 @@ function toggle(){
                     {child['name']}
                 </td>
                 <td style="text-align: right;">{child['value']}ms</td>
-                <td>{Math.round(child['value']/maxtime*10000)/100}%</td>
+                <td style="text-align: right;">{Math.round(child['value']/maxtime*10000)/100}%</td>
             </tr>
         {/if}
     {/each}

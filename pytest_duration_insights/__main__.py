@@ -4,6 +4,7 @@ import shutil
 import tempfile
 import subprocess
 from pathlib import Path
+from pkg_resources import resource_filename
 
 from clumper import Clumper 
 
