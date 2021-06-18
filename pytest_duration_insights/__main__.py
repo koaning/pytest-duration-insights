@@ -70,7 +70,7 @@ def explore(
 @app.command()
 def version():
     """Returns the version."""
-    return VERSION
+    print(VERSION)
 
 
 if __name__ == "__main__":
