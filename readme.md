@@ -1,3 +1,5 @@
+<img src="logo.png" width="125" height="125" align="right" />
+
 # Pytest Duration Insights 
 
 This python package offers a small dashboard on top of the report that is 
