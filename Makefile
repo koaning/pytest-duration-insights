@@ -3,8 +3,8 @@ web:
 	cp -r svelte-app/public/* pytest_duration_insights/static
 
 pages: web
-	cp -r svelte-app/public/* pages
-	python -m http.server 8000 --directory pages
+	cp -r svelte-app/public/* docs
+	python -m http.server 8000 --directory docs
 
 demo-scikit: web
 	python -m pytest_duration_insights explore tests/data/scikit-lego-reportlog.jsonl
