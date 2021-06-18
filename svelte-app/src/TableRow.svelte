@@ -14,7 +14,7 @@ function toggle(){
 
 <tr>
     <td on:click={toggle}>
-        <span style="padding-left: {depth*5}px; cursor: pointer;">
+        <span style="padding-left: {depth*10}px; cursor: pointer;">
             {#if expanded}
                 <IconOpen/>
             {:else}
