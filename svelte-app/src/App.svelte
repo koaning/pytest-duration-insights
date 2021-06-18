@@ -9,8 +9,8 @@
 		return blob
 	}
 
-	let mapPromise = getData("/data.json");
-	let treePromise = getData("/treedata.json");
+	let mapPromise = getData("data.json");
+	let treePromise = getData("treedata.json");
 	
 </script>
 
