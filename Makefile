@@ -3,6 +3,7 @@ web:
 	cp -r svelte-app/public/* pytest_duration_insights/static
 
 pages: web
+	# WARNING! You will need to manually make the paths relative.
 	cp -r svelte-app/public/* docs
 	python -m http.server 8000 --directory docs
 
