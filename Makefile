@@ -4,6 +4,11 @@ web:
 
 pages: web
 	# WARNING! You will need to manually make the paths relative.
+	#
+	# Change the retreival via; 
+	#
+	# let mapPromise = getData("pytest-duration-insights/data.json");
+	# let treePromise = getData("pytest-duration-insights/treedata.json");
 	cp -r svelte-app/public/* docs
 	python -m http.server 8000 --directory docs
 
