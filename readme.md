@@ -6,6 +6,13 @@ This python package offers a small dashboard that helps you investigate
 long running pytest runs. It's built on top of the report that is generated 
 by [pytest-reportlog](https://github.com/pytest-dev/pytest-reportlog). 
 
+## Preview 
+
+We're hosting a demo on GitHub pages. You can view it 
+[here](https://koaning.github.io/pytest-duration-insights/).
+
+![](gif.gif)
+
 ## Instructions. 
 
 ### 1. Install.
@@ -28,11 +35,6 @@ pytest-duration-insights explore reportlog.jsonl
 
 This will start up a service that tries to help you find areas in your
 testing code base that are worth investigating.
-
-## Preview 
-
-We're hosting a demo of this service on GitHub pages. You can view it 
-[here](https://koaning.github.io/pytest-duration-insights/).
 
 ## Roadmap 
 
