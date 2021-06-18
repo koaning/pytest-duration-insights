@@ -13,12 +13,13 @@ def read(fname):
 setup(
     name="pytest-duration-insights",
     version=VERSION,
-    packages=find_packages(exclude=['notebooks']),
+    packages=find_packages(),
+    include_package_data=True,
     install_requires=base_packages,
     entry_points={
         'console_scripts': ['pytest-duration-insights=pytest_duration_insights.__main__:app']
     },
-    package_data={"pytest-duration-insights": ["static/**/*"]},
+    package_data={"pytest_duration_insights": ["static/*", "static/**/*"]},
     long_description=read("readme.md"),
     project_urls={
         'Bug Tracker': 'https://github.com/koaning/pytest-duration-insights/issues',

@@ -39,7 +39,8 @@ def explore(report_path: str = typer.Argument(..., help="Report log to visualise
     
     # We server everything as static files from a temporary folder
     tmpdir = tempfile.mkdtemp()
-    shutil.copytree(src=Path(__file__).parent / "static", 
+    orig = resource_filename("pytest_duration_insights", "static")
+    shutil.copytree(src=orig, 
                     dst=Path(tmpdir) / "static")
     Clumper(res, listify=False).write_json(Path(tmpdir) / "static" / "data.json")
     tree_res = Node.from_dict(res).to_value_dict()
