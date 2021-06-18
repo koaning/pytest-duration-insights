@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from pytest_duration_insights import VERSION
 
-base_packages = ["pytest-reportlog", "clumper", "parse"]
+base_packages = ["pytest-reportlog>=0.1.2", "clumper>=0.2.12", "parse>=1.19.0", "typer>=0.3.2"]
 
 
 setup(
