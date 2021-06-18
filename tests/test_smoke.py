@@ -12,14 +12,18 @@ runner = CliRunner()
 
 
 def test_version():
-    result = runner.invoke(app, ['version'])
+    result = runner.invoke(app, ["version"])
     assert result.exit_code == 0
 
 
-@pytest.mark.parametrize('path', [str(p) for p in pathlib.Path("tests/data").glob("*.jsonl")])
+@pytest.mark.parametrize(
+    "path", [str(p) for p in pathlib.Path("tests/data").glob("*.jsonl")]
+)
 def test_pipeline_smoke(path):
-    res = (Clumper.read_jsonl(path)
-              .pipe(parse_test_info)
-              .pipe(to_hierarchy_dict, hierarchy_col="hierarchy", value_col="duration"))
-    
+    res = (
+        Clumper.read_jsonl(path)
+        .pipe(parse_test_info)
+        .pipe(to_hierarchy_dict, hierarchy_col="hierarchy", value_col="duration")
+    )
+
     assert isinstance(res, dict)
