@@ -9,7 +9,8 @@ by [pytest-reportlog](https://github.com/pytest-dev/pytest-reportlog).
 ## Preview 
 
 We're hosting a demo on GitHub pages. You can view it 
-[here](https://koaning.github.io/pytest-duration-insights/).
+[here](https://koaning.github.io/pytest-duration-insights/). There's also an educational
+video announcement on [calmcode.io](https://calmcode.io) found [here](https://calmcode.io/labs/pytest-duration-insights.html).
 
 ![](gif.gif)
 
