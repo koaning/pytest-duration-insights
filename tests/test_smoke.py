@@ -5,7 +5,7 @@ from clumper import Clumper
 from typer.testing import CliRunner
 
 from pytest_duration_insights.__main__ import app
-from pytest_duration_insights._parsing import parse_test_info, to_hierarchy_dict
+from pytest_duration_insights._parsing import parse_test_info, to_hierarchy_dict, Node
 
 
 runner = CliRunner()
@@ -27,3 +27,5 @@ def test_pipeline_smoke(path):
     )
 
     assert isinstance(res, dict)
+    tree_res = Node.from_dict(res).to_value_dict()
+    assert isinstance(tree_res, dict)
