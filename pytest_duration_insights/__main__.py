@@ -9,7 +9,7 @@ from pkg_resources import resource_filename
 from clumper import Clumper
 
 from ._parsing import to_hierarchy_dict, parse_test_info, Node
-from pytest_duration_insights import VERSION
+from pytest_duration_insights import __version__
 
 
 app = typer.Typer(
@@ -70,7 +70,7 @@ def explore(
 @app.command()
 def version():
     """Returns the version."""
-    print(VERSION)
+    print(__version__)
 
 
 if __name__ == "__main__":

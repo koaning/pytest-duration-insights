@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-from pytest_duration_insights import VERSION
+from pytest_duration_insights import __version__
 
 base_packages = [
     "pytest-reportlog>=0.1.2",
@@ -17,7 +17,7 @@ def read(fname):
 
 setup(
     name="pytest-duration-insights",
-    version=VERSION,
+    version=__version__,
     packages=find_packages(),
     include_package_data=True,
     install_requires=base_packages,
