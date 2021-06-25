@@ -31,7 +31,7 @@ def parse_test_info(clump, trim=True):
         c.group_by("nodeid")
         .agg(duration=("duration", "sum"))
         .mutate(
-            duration=lambda d: round(d["duration"] * 1000),
+            duration=lambda d: max(1, round(d["duration"] * 1000)),
             parsed=lambda d: parse("{path}/{file}.py::{test}", d["nodeid"]).named,
             parsed_path=lambda d: f"{d['parsed']['path']}/{d['parsed']['file']}.py",
             parsed_test=lambda d: d["parsed"]["test"],
