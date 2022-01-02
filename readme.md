@@ -39,9 +39,9 @@ testing code base that are worth investigating.
 
 ## Roadmap 
 
-We're only scratching the surface of what the `reportlog.jsonl` file gives us. We might, for
-example, also explore how long it takes to setup/teardown tests. Feedback is appreciated, 
+We're only scratching the surface of what data we can visualise to help 
+you speed up your `pytest` runs. Feedback is appreciated, 
 especially if somebody has a keen insight that has helped in the past.
 
-That said, this project is very much an experiment as well. See it as a thing you could
+That said, this project is very much an experiment as well. See it as a tool you could
 try rather than a best practice.
