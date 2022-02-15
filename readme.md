@@ -46,6 +46,10 @@ are very important to you then you can turn them on via the `--no-trim` flag.
 pytest-duration-insights explore --no-trim reportlog.jsonl
 ```
 
+Be aware that you might get very dense visuals when you do this.
+
+![](https://user-images.githubusercontent.com/98330/147872375-cb3e1bc9-2c3e-4b8f-9abc-0ec236e55f96.png)
+
 ## Roadmap 
 
 We're only scratching the surface of what data we can visualise to help 
