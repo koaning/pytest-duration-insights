@@ -37,6 +37,15 @@ pytest-duration-insights explore reportlog.jsonl
 This will start up a service that tries to help you find areas in your
 testing code base that are worth investigating.
 
+#### Parametrized Tests 
+
+This tool automatically hides the parametrized test results. But if these 
+are very important to you then you can turn them on via the `--no-trim` flag.
+
+```
+pytest-duration-insights explore --no-trim reportlog.jsonl
+```
+
 ## Roadmap 
 
 We're only scratching the surface of what data we can visualise to help 
