@@ -1,6 +1,6 @@
-# Pytest Duration Insights 
+<img src="https://github.com/koaning/pytest-duration-insights/blob/main/logo.png" width=150 align="right" />
 
-<img src="https://github.com/koaning/pytest-duration-insights/blob/main/logo.png" width="100" height="100" align="right" />
+### Pytest Duration Insights 
 
 This python package offers a small dashboard that helps you investigate
 long running pytest runs. It's built on top of the report that is generated 
