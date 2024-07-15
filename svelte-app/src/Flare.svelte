@@ -4,7 +4,7 @@
 	import { tweened } from 'svelte/motion';
 	import * as eases from 'svelte/easing';
 	import { fade } from 'svelte/transition';
-	import * as yootils from 'yootils';
+    import { formatTime } from './TimeUtils.svelte';
 	import Treemap from './Treemap.svelte';
 	
     export let data; 
@@ -75,7 +75,7 @@
 				>
 					<div class="contents">
 						<strong>{node.data.name}</strong>
-						<span>{yootils.commas(node.value)}</span>
+						<span>{formatTime(node.value)}</span>
 					</div>
 				</div>
 			{/if}

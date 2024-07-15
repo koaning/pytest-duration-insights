@@ -1,6 +1,7 @@
 <script>
 import IconOpen from "./IconOpen.svelte"
 import IconClosed from "./IconClosed.svelte"
+import { formatTime } from './TimeUtils.svelte';
 
 export let data;
 export let maxtime; 
@@ -23,7 +24,7 @@ function toggle(){
             {data['name']}
         </span>
     </td>
-    <td style="text-align: right;">{data['value']}ms</td>
+    <td style="text-align: right;">{formatTime(data['value'])}</td>
     <td style="text-align: right;">{Math.round(data['value']/maxtime*10000)/100}%</td>
 </tr>
 
